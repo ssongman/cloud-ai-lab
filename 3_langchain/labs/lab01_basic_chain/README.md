@@ -43,8 +43,6 @@ $ pip install -U langchain langchain-core langchain-openai
 
 ### api key 연결
 
-
-
 ```sh
 export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxx"
 
@@ -420,10 +418,6 @@ print(chain.invoke({"topic": "LangChain"}))
 
 
 
-
-
-
-
 ## **🔥 장점 1.** 흐름이 눈에 보인다
 
 
@@ -482,8 +476,6 @@ JsonOutputParser()
 
 
 
-
-
 아래 중 **하나라도 필요하면 LangChain이 맞습니다.**
 
 | **필요 기능** | **OpenAI SDK** | **LangChain** |
@@ -496,27 +488,15 @@ JsonOutputParser()
 
 
 
-------
-
-
-
 
 
 # **5️⃣ 진짜 “체감 100%” 예제 (추천)**
 
 
 
-
-
-
-
-### **🔥** 
-
 ### **RAG + Runnable 최소 예제**
 
-
-
-```
+```python
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -565,15 +545,7 @@ print(chain.invoke({
 
 
 
-
-
-
-
 ### **❌ LangChain 안 써도 되는 경우**
-
-
-
-
 
 - 단발성 질문
 - 1-step 응답
@@ -581,15 +553,7 @@ print(chain.invoke({
 
 
 
-
-
-
-
 ### **⭕ LangChain 써야 하는 경우**
-
-
-
-
 
 - RAG
 - Agent
@@ -601,17 +565,7 @@ print(chain.invoke({
 
 
 
-------
-
-
-
-
-
 # **7️⃣ 지금 당신의 상황에서의 정확한 결론**
-
-
-
-
 
 > ✔ “지금까지의 예제는 일부러 단순했다”
 
@@ -623,26 +577,3 @@ print(chain.invoke({
 
 ------
 
-
-
-
-
-## **다음으로 딱 맞는 단계 👇**
-
-
-
-
-
-이제 진짜 체감할 차례입니다.
-
-
-
-1️⃣ **LangChain RAG + VectorStore (최소)**
-
-2️⃣ **LangChain → LangGraph로 확장**
-
-3️⃣ **LangChain + Tool Calling → Agent**
-
-
-
-👉 다음으로 **몇 번** 갈까요?
