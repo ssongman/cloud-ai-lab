@@ -39,3 +39,16 @@ implementation/
 ## 시작하기
 
 > 구현 진행 시 상세 내용이 추가됩니다.
+
+
+
+
+
+## LLM Open API Key
+
+
+
+export OPENAI_API_KEY="your-api-key-here"
+
+export OPENAI_API_KEY="sk-proj-9ruwQXS..."
+
