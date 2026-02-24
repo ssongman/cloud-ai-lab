@@ -49,8 +49,16 @@ lab04_faiss_vector_rag/
 
 
 ```bash
-source venv/bin/activate
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+$ python3 -m venv venv
+
+$ source venv/bin/activate
+
+$ uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+
+$ deactivate
+
 
 ```
 
@@ -159,6 +167,63 @@ $ curl -X POST http://localhost:8000/knowledgeops/api/chat \
 ```sh
 
 $ curl -X POST http://localhost:8000/knowledgeops/api/index/rebuild \
+
+```
+
+
+
+
+
+# 3. Dockerizing
+
+
+
+## 1) dockerfile
+
+```dockerfile
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# 의존성 먼저 설치 (코드 변경 시 캐시 레이어 재활용)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 소스 코드 및 PDF 파일 복사
+COPY app/ ./app/
+COPY pdfs/ ./pdfs/
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
+```
+
+
+
+## 2) dockerizing
+
+```sh
+
+$ docker build -t knowledgeops-api /Users/song/Documents/GitRepo/GithubRepo/cloud-ai-lab/5_rag/labs/lab04_faiss_vector_rag/ 2>&1
+
+
+```
+
+
+
+## 3) docker
+
+```sh
+$ docker run -d \
+  --name knowledgeops \
+  -p 8000:8000 \
+  --env-file /Users/song/Documents/GitRepo/GithubRepo/cloud-ai-lab/5_rag/labs/lab04_faiss_vector_rag/.env \
+  -v /Users/song/Documents/GitRepo/GithubRepo/cloud-ai-lab/5_rag/labs/lab04_faiss_vector_rag/faiss_index:/app/faiss_index \
+  knowledgeops-api && echo "컨테이너 시작됨"
+
+
 
 ```
 

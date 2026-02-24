@@ -1,0 +1,9 @@
+venv/
+faiss_index/
+__pycache__/
+.env
+.git/
+.claude/
+*.pyc
+*.pyo
+*.pyd
