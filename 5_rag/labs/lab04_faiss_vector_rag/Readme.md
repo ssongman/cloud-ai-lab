@@ -104,54 +104,29 @@ $ curl http://localhost:8000/knowledgeops/api/health -i
 # 요청
 $ curl -X POST http://localhost:8000/knowledgeops/api/chat \
   -H "Content-Type: application/json" \
-  -d '{"question": "고체연료로 지출한 금액이 얼마야?"}'
+  -d '{"question": "Cloud사업본부 변경관리위원회의 목적은 무엇인가?"}'
 
 # 응답
 {
-  "answer": "고체연료로 지출한 금액은 45,000원이다.",
-  "tokens": 614,
-  "prompt_tokens": 592,
-  "completion_tokens": 22,
-  "cost": 0.000329
+  "answer": "Cloud사업본부 변경관리위원회의 목적은 주어진 작업에 대한 안건 검토, 심의 의결, 그리고 심의 결과를 통해 작업의 승인 여부와 우선순위를 결정하며, 이를 통해 작업의 변경 및 관리를 원활하게 하고 효율적으로 조정하는 것입니다.",
+  "tokens": 1274,
+  "prompt_tokens": 1159,
+  "completion_tokens": 115,
+  "cost": 0.0007520000000000001
 }
 
 
 $ curl -X POST http://localhost:8000/knowledgeops/api/chat \
   -H "Content-Type: application/json" \
-  -d '{"question": "참기름으로 지출한 금액이 얼마야?"}'
+  -d '{"question": "S등급을 수용하는 공통인프라 작업시 주의할점은?"}'
 
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "접시는?"}'
-
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "치킨은?"}'
-  
-  
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "여대 합계금액은 얼마야?"}'
-  
-  
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "여대 합계금액에서 참기름값을 뺀 금액은 얼마야?"}'
-  
-
-```
-
-
-
-```sh
-
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "김기옥님이 찬조한 찬조품은?"}'
-
-$ curl -X POST http://localhost:8000/knowledgeops/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "유기란님이 찬조한 찬조품은?"}'
+{
+  "answer": "S등급을 수용하는 공통인프라 작업 시에는 작업 결과를 점검하기 위해 Snapshot, Log, 작업결과서 등을 확인하여야 하며, Network/방화벽/S 등급 공통인프라 사전검증을 수행하여야 한다. 또한, SW 패치 및 중요작업의 백업/원복 체계를 보완하여야 하고, 이상징후가 발생할 경우 작업상황창 내에 상황을 전파해야 한다.",
+  "tokens": 3329,
+  "prompt_tokens": 3171,
+  "completion_tokens": 158,
+  "cost": 0.0018225
+}
 
 
 ```
@@ -166,7 +141,7 @@ $ curl -X POST http://localhost:8000/knowledgeops/api/chat \
 
 ```sh
 
-$ curl -X POST http://localhost:8000/knowledgeops/api/index/rebuild \
+$ curl -X POST http://localhost:8000/knowledgeops/api/index/rebuild
 
 ```
 
